@@ -32,3 +32,36 @@ int _tmain(int argc, _TCHAR* argv[])
 	return 0;
 }
 
+// 9.14.2数组的使用和交互.cpp : 定义控制台应用程序的入口点。
+//
+
+#include "stdafx.h"
+#include<iostream>
+using namespace std;
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	const char Key[]={'a','b','c','b','a'};
+	const int Num_Qus=5;
+	char c;
+	int q=0,corr=0;
+	while(cin.get(c)) //输入ctrl+z时，while(cin.get(c))判断为假，跳出循环。
+	{
+		if(c!='\n'){
+			if(c==Key[q]){
+				cout<<" ";
+				corr++;
+			}
+			else
+				cout<<"*";
+			q++;
+		}
+		else{
+			cout<<"Score"<<static_cast<float>(corr)/Num_Qus*100<<"%";
+			q=0;corr=0;cout<<endl;
+		}
+	}
+	return 0;
+}
+
