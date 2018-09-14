@@ -18,12 +18,16 @@ int _tmain(int argc, _TCHAR* argv[])
 		b[10-i-1]=a[i];
 	}
 	for (int i=0;i<10;i++){
+		if (i%5==0) cout<<endl; //每输出5个数据进行一次换行
+		cout.width(6); //设置输出宽度为6
 		cout<<"a["<<i<<"]="<<a[i]<<" ";
 		
 	}
 	cout<<endl;
 	for (int i=0;i<10;i++){
-				cout<<"b["<<i<<"]="<<b[i]<<" ";
+		if (i%5==0) cout<<endl;
+		cout.width(6);
+		cout<<"b["<<i<<"]="<<b[i]<<" ";
 	}
 	return 0;
 }
